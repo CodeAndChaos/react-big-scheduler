@@ -37,12 +37,12 @@ export default class SchedulerData {
         this._createRenderData();
     }
 
-    setSchedulerLocale(preset, object) {
+    async setSchedulerLocale(preset, object) {
         if (!preset) return
 
         let l = preset
         if (typeof preset === 'string') {
-            l = require(`dayjs/locale/${preset}.js`)
+            l = await import(`dayjs/locale/${preset}.js`)
 
             if (!!object) {
                 Object.entries(object).forEach(([key, value]) => l[key] = value)
@@ -54,9 +54,9 @@ export default class SchedulerData {
         this.setViewType(this.viewType, this.showAgenda, this.isEventPerspective)
     }
 
-    setCalendarPopoverLocale(lang) {
+    async setCalendarPopoverLocale(lang) {
         if (!!lang && typeof lang === 'string') {
-            this.calendarPopoverLocale = require(`antd/locale/${lang}.js`)
+            this.calendarPopoverLocale = await import(`antd/locale/${lang}.js`)
         }
     }
 
