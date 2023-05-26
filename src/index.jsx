@@ -40,6 +40,7 @@ import SummaryPos from './SummaryPos'
 import SchedulerData from './SchedulerData'
 import DemoData from './DemoData'
 import SchedulerHeader from './SchedulerHeader'
+import './css/style.css';
 
 class Scheduler extends Component {
 

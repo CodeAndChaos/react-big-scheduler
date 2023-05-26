@@ -4,14 +4,9 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react()],
   build: {
-    lib: {
-      entry: "src/index.jsx",
-      name: "react-big-scheduler",
-      fileName: "react-big-scheduler",
-    },
     rollupOptions: {
       output: {
-        dir: "lib",
+        dir: "exampledist/static",
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
